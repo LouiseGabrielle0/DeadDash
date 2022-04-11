@@ -1,0 +1,16 @@
+#container {
+    position: absolute;
+    background-color: black;
+    background-image: url(../images/zombie-background-road.png);
+    background-repeat: no-repeat;
+    height: 64%;
+    width: 50%;
+    margin: 5rem;
+    padding-bottom: 5rem;
+}
+
+.player {
+    position: relative;
+    background-image: url(../images/Louise-trimmy.png);
+    background-repeat: no-repeat;
+}
