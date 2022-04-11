@@ -42,6 +42,14 @@ class Game {
           }
           this.drawNewElement(this.player);
        }
+
+    shootWeapon(direction){
+        if (direction === "left") {
+            document.getElementsByClassName("player").style.background-image;"url(../images/Louise-trimmy-left.png)"
+          } else if (direction === "right") {
+            document.getElementsByClassName("player").style.background-image;"url(../images/Louise-trimmy-right.png)"
+       }
+    }   
 }
 
 
