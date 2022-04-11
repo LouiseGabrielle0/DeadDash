@@ -2,16 +2,19 @@ class Game {
     constructor(){
         this.playArea = null;
         this.player = null;
+        this.gamerun = false;
+        this.timer = 0;
     }
 
     start(){      
       this.player = new Player()
-      this.player.domElement = this.createNewElement("player")
-      this.drawNewElement(this.player)
-      this.movePlayer
+      this.player.domElement = this.createNewElement("player", "player")
+     
     }
 
-    createNewElement(className){
+  
+
+    createNewElement(className, Id){
         const playArea = document.getElementById("container");
         let newElement = document.createElement("div");
         newElement.className = className;
@@ -26,6 +29,23 @@ class Game {
         item.domElement.style.width = item.width + "%"
         item.domElement.style.height = item.height + "%"
 
+    }
+
+    runGame(){
+        this.drawNewElement(this.player)
+        this.movePlayer
+        // this.timer = setInterval(() => {
+            
+        // },100)
+    
+    }
+
+    pauseGame(){
+        // clearInterval(this.timer)
+    }
+
+    reloadGame(){
+        document.location.reload()
     }
 
     movePlayer(direction){
@@ -45,9 +65,9 @@ class Game {
 
     shootWeapon(direction){
         if (direction === "left") {
-            document.getElementsByClassName("player").style.background-image;"url(../images/Louise-trimmy-left.png)"
+            this.player.domElement.style.backgroundImage="url('../images/Louise-trimmy-left.png')"
           } else if (direction === "right") {
-            document.getElementsByClassName("player").style.background-image;"url(../images/Louise-trimmy-right.png)"
+            this.player.domElement.style.backgroundImage="url('../images/Louise-trimmy-right.png')"
        }
     }   
 }
