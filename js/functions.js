@@ -39,4 +39,12 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
+function addHealthBar(){
+    const healthBar = document.createElement("progress");
+    healthBar.className = 'healthBar';
+    healthBar.max = '100';
+    healthBar.value = '70';
+    playArea.appendChild(healthBar)
+}
+
 

@@ -3,7 +3,7 @@ class Zombie {
     this.height = 16;
     this.width = 5;
     this.positionX = 0;
-    this.positionY = Math.floor(Math.random() * 60)
+    this.positionY = Math.floor(Math.random() * 60);
   }
 
   moveZombieLeft() {
@@ -14,9 +14,16 @@ class Zombie {
     this.positionX++;
   }
 
-  
-    
-  
+  detectZombieCollsion(zombie) {
+    if (
+      game.player.positionX < zombie.positionX + zombie.width &&
+      game.player.positionX + game.player.width > zombie.positionX &&
+      game.player.positionY < zombie.positionY + zombie.height &&
+      game.player.height + game.player.positionY > zombie.positionY
+    ) {
+      console.log("collision detected");
+    }
+  }
 }
 
 class ZombieMark extends Zombie {
@@ -26,14 +33,15 @@ class ZombieMark extends Zombie {
     this.height = 16;
     this.width = 6;
     this.positionX = 0;
-    this.positionY = Math.floor(Math.random() * 50)
+    this.positionY = Math.floor(Math.random() * 50);
   }
 
   deleteZombieMark(zombie) {
     if (zombie.positionX === 48) {
-    zombie.div.remove(zombie)
-    game.ZombieArr.splice(game.ZombieArr.indexOf(zombie),1)}
-}    
+      zombie.div.remove(zombie);
+      game.ZombieArr.splice(game.ZombieArr.indexOf(zombie), 1);
+    }
+  }
 }
 
 class ZombieKaren extends Zombie {
@@ -43,9 +51,8 @@ class ZombieKaren extends Zombie {
     this.height = 16;
     this.width = 6;
     this.positionX = 48;
-    this.positionY = Math.floor(Math.random() * 50)
+    this.positionY = Math.floor(Math.random() * 50);
   }
-  
 
   moveZombieLeftFaster() {
     this.positionX -= 1.5;
@@ -56,13 +63,14 @@ class ZombieKaren extends Zombie {
   }
 
   deleteZombieKaren(zombie) {
-    if (zombie.positionX === 0 || zombie.positionX === 0.5 ) {
-    zombie.div.remove(zombie)
-    game.ZombieArr.splice(game.ZombieArr.indexOf(zombie),1)}
-}    
+    if (zombie.positionX === 0 || zombie.positionX === 0.5) {
+      zombie.div.remove(zombie);
+      game.zombieFasterArr.splice(game.zombieFasterArr.indexOf(zombie), 1);
+    }
+  }
 }
 
-class ZombieJay extends Jay {
+class ZombieJay extends Zombie {
   constructor() {
     super();
   }

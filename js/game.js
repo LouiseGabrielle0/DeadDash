@@ -38,6 +38,7 @@ class Game {
       this.zombieArr.forEach((zombie) => {
         zombie.moveZombieRight();
         this.drawNewElement(zombie);
+        zombie.detectZombieCollsion(zombie)
         zombie.deleteZombieMark(zombie);
       });
 
@@ -59,6 +60,7 @@ class Game {
       this.zombieFasterArr.forEach((zombie) => {
         zombie. moveZombieLeftFaster();
         this.drawNewElement(zombie);
+        zombie.detectZombieCollsion(zombie)
         zombie.deleteZombieKaren(zombie);
       });
 
