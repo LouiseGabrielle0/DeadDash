@@ -31,10 +31,10 @@ document.addEventListener("keydown", function (event) {
    case "r":
     game.reloadGame();
     case "a":
-      game.directWeapon("left");
+      weapon.directWeapon("left");
       break;
     case "d":
-      game.directWeapon("right");
+      weapon.directWeapon("right");
       break;
   }
 });
@@ -48,6 +48,6 @@ function addHealthBar(){
 }
 
 function deductHealth(){
-document.getElementById("healthBar").value -=10
+document.getElementById("healthBar").value -=5
 }
 

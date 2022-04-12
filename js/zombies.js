@@ -21,6 +21,8 @@ class Zombie {
       game.player.positionY < zombie.positionY + zombie.height &&
       game.player.height + game.player.positionY > zombie.positionY
     ) {
+      player.health-=5
+      console.log(player.health)  
       deductHealth();
     }
   }
@@ -83,7 +85,7 @@ class ZombieKaren extends Zombie {
   }
 }
 
-class ZombieJay extends Zombie {
+class ZombieJay extends Zombie { // final zombie hopefully moving down
   constructor() {
     super();
   }

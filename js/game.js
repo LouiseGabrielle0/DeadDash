@@ -10,8 +10,7 @@ class Game {
     this.time = 0;
     this.zombieArr = [];
     this.zombieFasterArr = [];
-    this.bulletLeftArr = [];
-    this.bulletRightArr = [];
+
   }
 
   createNewElement(className, Id) {
@@ -73,13 +72,13 @@ class Game {
         weapon.detectBulletCollisionRight(zombie);
       });
 
-      this.bulletLeftArr.forEach((bullet) => {
+      weapon.bulletLeftArr.forEach((bullet) => {
         bullet.moveLeft();
         this.drawNewElement(bullet);
         weapon.deleteBulletLeft(bullet);
       });
 
-      this.bulletRightArr.forEach((bullet) => {
+      weapon.bulletRightArr.forEach((bullet) => {
         bullet.moveRight();
         this.drawNewElement(bullet);
         weapon.deleteBulletRight(bullet)
@@ -111,34 +110,4 @@ class Game {
     }
     this.drawNewElement(this.player);
   }
-
-  shootWeapon(direction) {
-    let playerPositionX = this.player.positionX;
-    let playerPositionY = this.player.positionY;
-    playerPositionY += 5;
-
-    const bullet = new Weapon(playerPositionX, playerPositionY);
-    bullet.div = this.createNewElement("bullet");
-    if (direction === "left") {
-      this.bulletLeftArr.push(bullet);
-      this.drawNewElement(bullet);
-    } else if (direction === "right") {
-      this.bulletRightArr.push(bullet);
-      this.drawNewElement(bullet);
-    }
-  }
-
-  
-  directWeapon(direction) {
-    if (direction === "left") {
-      this.player.div.style.backgroundImage =
-        "url('../images/Louise-trimmy-left.png')";
-      this.shootWeapon(direction);
-    } else if (direction === "right") {
-      this.player.div.style.backgroundImage =
-        "url('../images/Louise-trimmy-right.png')";
-      this.shootWeapon(direction);
-    }
-  }
-
 }

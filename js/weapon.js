@@ -7,6 +7,8 @@ class Weapon {
     this.div = null;
     this.width = 0.2;
     this.height = 0.2;
+    this.bulletRightArr = [];
+    this.bulletLeftArr = [];
   }
 
   moveRight() {
@@ -21,8 +23,24 @@ class Weapon {
     this.positionY++;
   }
 
+  shootWeapon(direction) {
+    let playerPositionX = game.player.positionX;
+    let playerPositionY = game.player.positionY;
+    playerPositionY += 5;
+
+    const bullet = new Weapon(playerPositionX, playerPositionY);
+    bullet.div = game.createNewElement("bullet");
+    if (direction === "left") {
+      this.bulletLeftArr.push(bullet);
+      game.drawNewElement(bullet);
+    } else if (direction === "right") {
+      this.bulletRightArr.push(bullet);
+      game.drawNewElement(bullet);
+    }
+  }
+
   detectBulletCollisionLeft(item) {
-    game.bulletLeftArr.forEach((bullet) => {
+    weapon.bulletLeftArr.forEach((bullet) => {
       if (
         bullet.positionX < item.positionX + item.width &&
         bullet.positionX + bullet.width > item.positionX &&
@@ -39,7 +57,7 @@ class Weapon {
 
 
   detectBulletCollisionRight(item) {
-    game.bulletRightArr.forEach((bullet) => {
+    weapon.bulletRightArr.forEach((bullet) => {
       if (
         bullet.positionX < item.positionX + item.width &&
         bullet.positionX + bullet.width > item.positionX &&
@@ -57,22 +75,34 @@ class Weapon {
 
       removeBullet(bullet){
         bullet.div.remove(bullet);
-        game.bulletLeftArr.splice(game.bulletLeftArr.indexOf(bullet), 1);
-        game.bulletRightArr.splice(game.bulletRightArr.indexOf(bullet), 1);
+        this.bulletLeftArr.splice(this.bulletLeftArr.indexOf(bullet), 1);
+        this.bulletRightArr.splice(this.bulletRightArr.indexOf(bullet), 1);
       }
   
 
   deleteBulletLeft(bullet) {
     if (bullet.positionX < 0) {
       bullet.div.remove(bullet);
-      game.bulletLeftArr.splice(game.bulletLeftArr.indexOf(bullet), 1);
+      this.bulletLeftArr.splice(this.bulletLeftArr.indexOf(bullet), 1);
     }
   }
 
   deleteBulletRight(bullet) {
     if (bullet.positionX > 48) {
       bullet.div.remove(bullet);
-      game.bulletRightArr.splice(game.bulletRightArr.indexOf(bullet), 1);
+      this.bulletRightArr.splice(this.bulletRightArr.indexOf(bullet), 1);
+    }
+  }
+
+  directWeapon(direction) {
+    if (direction === "left") {
+      game.player.div.style.backgroundImage =
+        "url('../images/Louise-trimmy-left.png')";
+      this.shootWeapon(direction);
+    } else if (direction === "right") {
+      game.player.div.style.backgroundImage =
+        "url('../images/Louise-trimmy-right.png')";
+      this.shootWeapon(direction);
     }
   }
 }
