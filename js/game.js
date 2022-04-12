@@ -6,6 +6,7 @@ class Game {
     this.timer = null;
     this.time = 0;
     this.zombieArr = [];
+    this.zombieFasterArr = [];
   }
 
   createNewElement(className, Id) {
@@ -46,6 +47,20 @@ class Game {
         this.drawNewElement(slowZombie);
         this.zombieArr.push(slowZombie);
       }
+
+      
+      if (this.time % 5 === 0) {
+        let fastZombie = new ZombieKaren();
+        fastZombie.div = this.createNewElement("zombieKaren");
+        this.drawNewElement(fastZombie);
+        this.zombieFasterArr.push(fastZombie);
+      }
+
+      this.zombieFasterArr.forEach((zombie) => {
+        zombie. moveZombieLeftFaster();
+        this.drawNewElement(zombie);
+        zombie.deleteZombieKaren(zombie);
+      });
 
       this.time++;
     }, 1000);
