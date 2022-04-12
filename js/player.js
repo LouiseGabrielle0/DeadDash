@@ -3,8 +3,9 @@ class Player {
     this.div = null
     this.height = 15;
     this.width = 5;
-    this.positionX = 50;
-    this.positionY = 50;
+    this.positionY = 48;
+    this.positionX = 11;
+    
   }
 
   moveLeft() {
@@ -16,10 +17,10 @@ class Player {
   }
 
   moveDown() {
-    this.positionY++;
+    this.positionY--
   }
 
   moveUp() {
-    this.positionY--;
+    this.positionY++;
   }
 }

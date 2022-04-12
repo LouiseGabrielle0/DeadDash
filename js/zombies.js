@@ -3,7 +3,7 @@ class Zombie {
     this.height = 16;
     this.width = 5;
     this.positionX = 0;
-    this.positionY = Math.floor(Math.random() * 40)
+    this.positionY = Math.floor(Math.random() * 60)
   }
 
   moveZombieLeft() {
@@ -26,12 +26,12 @@ class ZombieMark extends Zombie {
     this.height = 16;
     this.width = 6;
     this.positionX = 0;
-    this.positionY = Math.floor(Math.random() * 40)
+    this.positionY = Math.floor(Math.random() * 50)
   }
 
   deleteZombieMark(zombie) {
-    if (zombie.positionX > 95) {
-    zombie.div.remove()
+    if (zombie.positionX === 48) {
+    zombie.div.remove(zombie)
     game.ZombieArr.splice(game.ZombieArr.indexOf(zombie),1)}
 }    
 }
