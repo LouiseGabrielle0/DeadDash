@@ -1,5 +1,4 @@
-const playArea = document.getElementById("container")
-
+const playArea = document.getElementById("container");
 
 class Game {
   constructor() {
@@ -32,14 +31,32 @@ class Game {
   runGame() {
     this.drawNewElement(this.player);
     this.movePlayer;
-    this.slowZombie = new ZombieMark();
-    this.slowZombie.div =this.createNewElement("zombieMark")
-    this.drawNewElement(this.slowZombie);
-    this.ZombieArr.push(this.slowZombie);
+    let slowZombie = new ZombieMark();
+    slowZombie.div = this.createNewElement("zombieMark");
+    this.drawNewElement(slowZombie);
+    this.ZombieArr.push(slowZombie);
+   
+
+    this.timer = setInterval(() => {    
+       
+      this.ZombieArr.forEach((zombie) => {
+        this.drawNewElement(zombie); 
+        zombie.moveZombieRight();             
+        zombie.deleteZombieMark(zombie);
+      });
+
+      if (this.timer % 5 === 0 ) {
+        let slowZombie = new ZombieMark();
+        slowZombie.div = this.createNewElement("zombieMark");
+        this.drawNewElement(slowZombie);
+        this.ZombieArr.push(slowZombie);
+      }
+    }, 100);
+    timer++
   }
 
   pauseGame() {
-    // clearInterval(this.timer)
+    clearInterval(this.timer);
   }
 
   reloadGame() {
@@ -68,4 +85,6 @@ class Game {
         "url('../images/Louise-trimmy-right.png')";
     }
   }
+
+  
 }
