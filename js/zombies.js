@@ -21,7 +21,8 @@ class Zombie {
       game.player.positionY < zombie.positionY + zombie.height &&
       game.player.height + game.player.positionY > zombie.positionY
     ) {
-      console.log("collision detected");
+      deductHealth()
+      
     }
   }
 }

@@ -40,11 +40,14 @@ document.addEventListener("keydown", function (event) {
 });
 
 function addHealthBar(){
-    const healthBar = document.createElement("progress");
-    healthBar.className = 'healthBar';
+    let healthBar = document.createElement("progress");
+    healthBar.id = 'healthBar';
     healthBar.max = '100';
-    healthBar.value = '70';
+    healthBar.value = '100';
     playArea.appendChild(healthBar)
 }
 
+function deductHealth(){
+document.getElementById("healthBar").value -=10
+}
 

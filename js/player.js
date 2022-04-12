@@ -5,6 +5,7 @@ class Player {
     this.width = 5;
     this.positionY = 48;
     this.positionX = 11;
+    this.playerHealth = 100
     
   }
 
@@ -23,4 +24,5 @@ class Player {
   moveUp() {
     this.positionY++;
   }
+  
 }

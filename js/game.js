@@ -28,6 +28,7 @@ class Game {
     this.player = new Player();
     this.player.div = this.createNewElement("player", "player");
     this.drawNewElement(this.player);
+    addHealthBar();
   }
 
   runGame() {
@@ -38,7 +39,7 @@ class Game {
       this.zombieArr.forEach((zombie) => {
         zombie.moveZombieRight();
         this.drawNewElement(zombie);
-        zombie.detectZombieCollsion(zombie)
+        zombie.detectZombieCollsion(zombie);
         zombie.deleteZombieMark(zombie);
       });
 
@@ -49,7 +50,6 @@ class Game {
         this.zombieArr.push(slowZombie);
       }
 
-      
       if (this.time % 5 === 0) {
         let fastZombie = new ZombieKaren();
         fastZombie.div = this.createNewElement("zombieKaren");
@@ -58,9 +58,9 @@ class Game {
       }
 
       this.zombieFasterArr.forEach((zombie) => {
-        zombie. moveZombieLeftFaster();
+        zombie.moveZombieLeftFaster();
         this.drawNewElement(zombie);
-        zombie.detectZombieCollsion(zombie)
+        zombie.detectZombieCollsion(zombie);
         zombie.deleteZombieKaren(zombie);
       });
 
@@ -82,15 +82,11 @@ class Game {
     if (direction === "left" && this.player.positionX > 0) {
       this.player.moveLeft();
     } else if (direction === "right" && this.player.positionX < 45) {
-      console.log(this.player.positionX);
       this.player.moveRight();
     } else if (direction === "up" && this.player.positionY < 50) {
-      console.log(this.player.positionY);
       this.player.moveUp();
-      console.log(this.player.positionY);
     } else if (direction === "down" && this.player.positionY > 0) {
       this.player.moveDown();
-      console.log(this.player.positionY);
     }
     this.drawNewElement(this.player);
   }
