@@ -1,7 +1,7 @@
 class Zombie {
   constructor() {
-    this.height = 16;
-    this.width = 5;
+    this.height = 8.5;
+    this.width = 3;
     this.positionX = 0;
     this.positionY = Math.floor(Math.random() * 60);
   }
@@ -40,7 +40,7 @@ class ZombieMark extends Zombie {
   deleteZombieMark(zombie) {
     if (zombie.positionX === 48) {
       zombie.div.remove(zombie);
-      game.ZombieArr.splice(game.ZombieArr.indexOf(zombie), 1);
+      game.zombieArr.splice(game.zombieArr.indexOf(zombie), 1);
     }
   }
 }

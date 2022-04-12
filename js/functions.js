@@ -31,10 +31,10 @@ document.addEventListener("keydown", function (event) {
    case "r":
     game.reloadGame();
     case "a":
-      game.shootWeapon("left");
+      game.directWeapon("left");
       break;
     case "d":
-      game.shootWeapon("right");
+      game.directWeapon("right");
       break;
   }
 });

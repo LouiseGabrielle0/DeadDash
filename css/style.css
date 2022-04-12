@@ -26,3 +26,8 @@
     background-image: url(../images/karen-left.png);
     background-repeat: no-repeat;
 }
+
+.bullet{
+    position: absolute;
+    background-color: rgb(219, 97, 15);
+}

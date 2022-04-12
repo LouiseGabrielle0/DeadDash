@@ -1,4 +1,6 @@
 const playArea = document.getElementById("container");
+const weapon = new Weapon
+const zombie = new Zombie
 
 class Game {
   constructor() {
@@ -7,6 +9,9 @@ class Game {
     this.time = 0;
     this.zombieArr = [];
     this.zombieFasterArr = [];
+    this.bulletLeftArr = [];
+    this.bulletRightArr = [];
+    this.playerScore = 0;
   }
 
   createNewElement(className, Id) {
@@ -41,16 +46,18 @@ class Game {
         this.drawNewElement(zombie);
         zombie.detectZombieCollsion(zombie);
         zombie.deleteZombieMark(zombie);
+        this.detectBulletCollisionLeft(zombie);
+        this.detectBulletCollisionRight(zombie);
       });
 
-      if (this.time % 5 === 0) {
+      if (this.time % 50 === 0) {
         let slowZombie = new ZombieMark();
         slowZombie.div = this.createNewElement("zombieMark");
         this.drawNewElement(slowZombie);
         this.zombieArr.push(slowZombie);
       }
 
-      if (this.time % 5 === 0) {
+      if (this.time % 500 === 0) {
         let fastZombie = new ZombieKaren();
         fastZombie.div = this.createNewElement("zombieKaren");
         this.drawNewElement(fastZombie);
@@ -62,10 +69,24 @@ class Game {
         this.drawNewElement(zombie);
         zombie.detectZombieCollsion(zombie);
         zombie.deleteZombieKaren(zombie);
+        this.detectBulletCollisionLeft(zombie);
+        this.detectBulletCollisionRight(zombie);
+      });
+
+      this.bulletLeftArr.forEach((bullet) => {
+        bullet.moveLeft();
+        this.drawNewElement(bullet);
+        weapon.deleteBulletLeft(bullet);
+      });
+
+      this.bulletRightArr.forEach((bullet) => {
+        bullet.moveRight();
+        this.drawNewElement(bullet);
+        weapon.deleteBulletRight(bullet)
       });
 
       this.time++;
-    }, 1000);
+    }, 100);
   }
 
   pauseGame() {
@@ -92,12 +113,61 @@ class Game {
   }
 
   shootWeapon(direction) {
+    let playerPositionX = this.player.positionX;
+    let playerPositionY = this.player.positionY;
+    playerPositionY += 5;
+
+    const bullet = new Weapon(playerPositionX, playerPositionY);
+    bullet.div = this.createNewElement("bullet");
+    if (direction === "left") {
+      this.bulletLeftArr.push(bullet);
+      this.drawNewElement(bullet);
+    } else if (direction === "right") {
+      this.bulletRightArr.push(bullet);
+      this.drawNewElement(bullet);
+    }
+  }
+
+  
+  detectBulletCollisionLeft(item) {
+    game.bulletLeftArr.forEach((bullet) => {
+      if (
+        bullet.positionX < item.positionX + item.width &&
+        bullet.positionX + bullet.width > item.positionX &&
+        bullet.positionY < item.positionY + item.height &&
+        bullet.height + bullet.positionY > item.positionY
+      ) {
+        this.player.score += 50;
+        console.log(this.player.score);
+      }
+    });
+  }
+
+  detectBulletCollisionRight(item) {
+    game.bulletRightArr.forEach((bullet) => {
+      if (
+        bullet.positionX < item.positionX + item.width &&
+        bullet.positionX + bullet.width > item.positionX &&
+        bullet.positionY < item.positionY + item.height &&
+        bullet.height + bullet.positionY > item.positionY
+      ) {
+        this.player.score += 50;
+        console.log(this.player.score);
+      }
+    });
+  }
+
+
+  directWeapon(direction) {
     if (direction === "left") {
       this.player.div.style.backgroundImage =
         "url('../images/Louise-trimmy-left.png')";
+      this.shootWeapon(direction);
     } else if (direction === "right") {
       this.player.div.style.backgroundImage =
         "url('../images/Louise-trimmy-right.png')";
+      this.shootWeapon(direction);
     }
   }
+
 }

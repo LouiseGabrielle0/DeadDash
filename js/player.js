@@ -1,11 +1,12 @@
 class Player {
   constructor() {
     this.div = null
-    this.height = 15;
-    this.width = 5;
+    this.height = 8.5;
+    this.width = 3;
     this.positionY = 48;
     this.positionX = 11;
-    this.playerHealth = 100
+    this.health = 100
+    this.score = 0
     
   }
 
