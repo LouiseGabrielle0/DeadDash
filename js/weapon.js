@@ -1,12 +1,12 @@
-const player = new Player
+const player = new Player();
 
 class Weapon {
   constructor(positionX, positionY) {
     this.positionX = positionX;
     this.positionY = positionY;
     this.div = null;
-    this.width = 0.5;
-    this.height = 0.5;
+    this.width = 0.2;
+    this.height = 0.2;
   }
 
   moveRight() {
@@ -30,10 +30,13 @@ class Weapon {
         bullet.height + bullet.positionY > item.positionY
       ) {
         player.score += 50;
+        zombie.removeZombie(item)
+        this.deleteBulletLeft(bullet);
         console.log(player.score);
-      }
+            }
     });
   }
+
 
   detectBulletCollisionRight(item) {
     game.bulletRightArr.forEach((bullet) => {
@@ -44,10 +47,20 @@ class Weapon {
         bullet.height + bullet.positionY > item.positionY
       ) {
         player.score += 50;
+        zombie.removeZombie(item)
+        this.removeBullet(bullet)
         console.log(player.score);
+        }
+
+        
+      })}
+
+      removeBullet(bullet){
+        bullet.div.remove(bullet);
+        game.bulletLeftArr.splice(game.bulletLeftArr.indexOf(bullet), 1);
+        game.bulletRightArr.splice(game.bulletRightArr.indexOf(bullet), 1);
       }
-    });
-  }
+  
 
   deleteBulletLeft(bullet) {
     if (bullet.positionX < 0) {

@@ -47,7 +47,7 @@ class Game {
         zombie.detectZombieCollsion(zombie);
         zombie.deleteZombieMark(zombie);
         weapon.detectBulletCollisionLeft(zombie);
-        // weapon.detectBulletCollisionRight(zombie);
+        weapon.detectBulletCollisionRight(zombie);
       });
 
       if (this.time % 50 === 0) {
@@ -104,7 +104,7 @@ class Game {
       this.player.moveLeft();
     } else if (direction === "right" && this.player.positionX < 45) {
       this.player.moveRight();
-    } else if (direction === "up" && this.player.positionY < 50) {
+    } else if (direction === "up" && this.player.positionY < 55) {
       this.player.moveUp();
     } else if (direction === "down" && this.player.positionY > 0) {
       this.player.moveDown();

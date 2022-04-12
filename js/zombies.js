@@ -21,8 +21,20 @@ class Zombie {
       game.player.positionY < zombie.positionY + zombie.height &&
       game.player.height + game.player.positionY > zombie.positionY
     ) {
-      deductHealth()
-      
+      deductHealth();
+    }
+  }
+
+  removeZombie(zombie) {
+    switch (zombie.div.className) {
+      case "zombieMark":
+        zombie.div.remove(zombie);
+        game.zombieFasterArr.splice(game.zombieFasterArr.indexOf(zombie), 1);
+        break;
+      case "zombieKaren":
+        zombie.div.remove(zombie);
+        game.zombieFasterArr.splice(game.zombieFasterArr.indexOf(zombie), 1);
+        break;
     }
   }
 }
