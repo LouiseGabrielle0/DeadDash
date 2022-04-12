@@ -1,15 +1,16 @@
 class Zombie {
   constructor() {
-    this.domElement = null;
     this.height = 16;
     this.width = 5;
+    this.positionX = 0;
+    this.positionY = Math.floor(Math.random() * 90)
   }
 
-  moveLeft() {
+  moveZombieLeft() {
     this.positionX--;
   }
 
-  moveRight() {
+  moveZombieRight() {
     this.positionX++;
   }
 }
@@ -17,6 +18,11 @@ class Zombie {
 class ZombieMark extends Zombie {
   constructor() {
     super();
+    this.div = null;
+    this.height = 16;
+    this.width = 6;
+    this.positionX = 0;
+    this.positionY = Math.floor(Math.random() * 90)
   }
 }
 
@@ -25,12 +31,12 @@ class ZombieJay extends Zombie {
     super();
   }
 
-  moveLeft() {
-    this.positionX -= 2;
+  moveZombieLeftFaster() {
+    this.positionX -= 1.2;
   }
 
-  moveRight() {
-    this.positionX += 2;
+  moveZombieRightFaster() {
+    this.positionX += 1.2;
   }
 }
 
@@ -39,11 +45,11 @@ class ZombieKaren extends Zombie {
     super();
   }
 
-  moveLeft() {
-    this.positionX -= 3;
+  moveZombieLeftFastest() {
+    this.positionX -= 1.5;
   }
 
-  moveRight() {
-    this.positionX += 3;
+  moveZombieRightFastest() {
+    this.positionX += 1.5;
   }
 }

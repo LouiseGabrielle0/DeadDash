@@ -1,27 +1,25 @@
-class Player{
-    constructor(){
-    this.domElement = null;
-    this.height = 14;
+class Player {
+  constructor() {
+    this.div = null
+    this.height = 15;
     this.width = 5;
     this.positionX = 50;
     this.positionY = 50;
-    }
+  }
 
+  moveLeft() {
+    this.positionX--;
+  }
 
-moveLeft(){
-    this.positionX--
-}
+  moveRight() {
+    this.positionX++;
+  }
 
-moveRight(){
-    this.positionX++
-}
+  moveDown() {
+    this.positionY++;
+  }
 
-moveDown(){
-    this.positionY++
-}
-
-moveUp(){
-    this.positionY--
-}
-
+  moveUp() {
+    this.positionY--;
+  }
 }

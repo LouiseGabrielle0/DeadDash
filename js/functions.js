@@ -1,6 +1,8 @@
 const game = new Game();
+
 game.start();
-console.log(game.gamerun)
+
+console.log(game.gamerun);
 
 document.addEventListener("keydown", function (event) {
   switch (event.key) {
@@ -17,18 +19,17 @@ document.addEventListener("keydown", function (event) {
       game.movePlayer("down");
       break;
     case "s":
-      if (game.gamerun === false) {
-        game.gamerun = true;
-        console.log(game.gamerun)
-        game.runGame();
-      } else if (game.gamerun === true) {
-        game.gamerun = false;
-        console.log(game.gamerun)
-        game.pauseGame();
-      }
-      break;
-    case "r":
-      game.reloadGame();
+     if (game.gamerun === false) {
+       game.gamerun = true;
+       game.runGame();
+     } else if (game.gamerun === true) {
+       game.gamerun = false;
+       console.log(game.gamerun);
+       game.pauseGame();
+     }
+     break;
+   case "r":
+    game.reloadGame();
     case "a":
       game.shootWeapon("left");
       break;
@@ -37,3 +38,5 @@ document.addEventListener("keydown", function (event) {
       break;
   }
 });
+
+

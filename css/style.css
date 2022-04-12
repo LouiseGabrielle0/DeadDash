@@ -3,7 +3,7 @@
     background-color: black;
     background-image: url(../images/zombie-background-road.png);
     background-repeat: no-repeat;
-    height: 64%;
+    height: 55%;
     width: 50%;
     margin: 5rem;
     padding-bottom: 5rem;
@@ -12,5 +12,11 @@
 .player {
     position: relative;
     background-image: url(../images/Louise-trimmy-right.png);
+    background-repeat: no-repeat;
+}
+
+.zombieMark{
+    position: relative;
+    background-image: url(../images/mark-right.png);
     background-repeat: no-repeat;
 }
