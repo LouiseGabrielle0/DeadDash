@@ -2,6 +2,7 @@ const playArea = document.getElementById("container");
 const weapon = new Weapon
 const zombie = new Zombie
 
+
 class Game {
   constructor() {
     this.gamerun = false;
@@ -11,7 +12,6 @@ class Game {
     this.zombieFasterArr = [];
     this.bulletLeftArr = [];
     this.bulletRightArr = [];
-    this.playerScore = 0;
   }
 
   createNewElement(className, Id) {
@@ -46,8 +46,8 @@ class Game {
         this.drawNewElement(zombie);
         zombie.detectZombieCollsion(zombie);
         zombie.deleteZombieMark(zombie);
-        this.detectBulletCollisionLeft(zombie);
-        this.detectBulletCollisionRight(zombie);
+        weapon.detectBulletCollisionLeft(zombie);
+        // weapon.detectBulletCollisionRight(zombie);
       });
 
       if (this.time % 50 === 0) {
@@ -69,8 +69,8 @@ class Game {
         this.drawNewElement(zombie);
         zombie.detectZombieCollsion(zombie);
         zombie.deleteZombieKaren(zombie);
-        this.detectBulletCollisionLeft(zombie);
-        this.detectBulletCollisionRight(zombie);
+        weapon.detectBulletCollisionLeft(zombie);
+        weapon.detectBulletCollisionRight(zombie);
       });
 
       this.bulletLeftArr.forEach((bullet) => {
@@ -129,35 +129,6 @@ class Game {
   }
 
   
-  detectBulletCollisionLeft(item) {
-    game.bulletLeftArr.forEach((bullet) => {
-      if (
-        bullet.positionX < item.positionX + item.width &&
-        bullet.positionX + bullet.width > item.positionX &&
-        bullet.positionY < item.positionY + item.height &&
-        bullet.height + bullet.positionY > item.positionY
-      ) {
-        this.player.score += 50;
-        console.log(this.player.score);
-      }
-    });
-  }
-
-  detectBulletCollisionRight(item) {
-    game.bulletRightArr.forEach((bullet) => {
-      if (
-        bullet.positionX < item.positionX + item.width &&
-        bullet.positionX + bullet.width > item.positionX &&
-        bullet.positionY < item.positionY + item.height &&
-        bullet.height + bullet.positionY > item.positionY
-      ) {
-        this.player.score += 50;
-        console.log(this.player.score);
-      }
-    });
-  }
-
-
   directWeapon(direction) {
     if (direction === "left") {
       this.player.div.style.backgroundImage =

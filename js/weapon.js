@@ -1,3 +1,5 @@
+const player = new Player
+
 class Weapon {
   constructor(positionX, positionY) {
     this.positionX = positionX;
@@ -19,17 +21,44 @@ class Weapon {
     this.positionY++;
   }
 
+  detectBulletCollisionLeft(item) {
+    game.bulletLeftArr.forEach((bullet) => {
+      if (
+        bullet.positionX < item.positionX + item.width &&
+        bullet.positionX + bullet.width > item.positionX &&
+        bullet.positionY < item.positionY + item.height &&
+        bullet.height + bullet.positionY > item.positionY
+      ) {
+        player.score += 50;
+        console.log(player.score);
+      }
+    });
+  }
+
+  detectBulletCollisionRight(item) {
+    game.bulletRightArr.forEach((bullet) => {
+      if (
+        bullet.positionX < item.positionX + item.width &&
+        bullet.positionX + bullet.width > item.positionX &&
+        bullet.positionY < item.positionY + item.height &&
+        bullet.height + bullet.positionY > item.positionY
+      ) {
+        player.score += 50;
+        console.log(player.score);
+      }
+    });
+  }
 
   deleteBulletLeft(bullet) {
-    if (bullet.positionX === 0) {
+    if (bullet.positionX < 0) {
       bullet.div.remove(bullet);
       game.bulletLeftArr.splice(game.bulletLeftArr.indexOf(bullet), 1);
     }
   }
 
   deleteBulletRight(bullet) {
-    if (bullet.positionX === 48) {
-      bullet.div.remove();
+    if (bullet.positionX > 48) {
+      bullet.div.remove(bullet);
       game.bulletRightArr.splice(game.bulletRightArr.indexOf(bullet), 1);
     }
   }
