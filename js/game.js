@@ -56,7 +56,7 @@ class Game {
         this.zombieArr.push(slowZombie);
       }
 
-      if (this.time % 200 === 0) {
+      if (this.time % 150 === 0) {
         let fastZombie = new ZombieKaren();
         fastZombie.div = this.createNewElement("zombieKaren");
         this.drawNewElement(fastZombie);
@@ -93,6 +93,28 @@ class Game {
 
       pickUp.waterArr.forEach((water) => {
         pickUp.detectPickUpCollection(water)
+      })
+
+      if (this.time % 500 === 0) {
+        let medkit = new Medkit();
+        medkit.div = this.createNewElement("medkit")
+        this.drawNewElement(medkit)
+        pickUp.medkitArr.push(medkit);
+      }
+
+      pickUp.medkitArr.forEach((medkit) => {
+        pickUp.detectPickUpCollection(medkit)
+      })
+
+      if (this.time % 200 === 0) {
+        let parts = new Parts();
+        parts.div = this.createNewElement("parts")
+        this.drawNewElement(parts)
+        pickUp.partsArr.push(parts);
+      }
+ 
+      pickUp.partsArr.forEach((parts) => {
+        pickUp.detectPickUpCollection(parts)
       })
 
       this.time++;

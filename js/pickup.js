@@ -6,8 +6,8 @@ class PickUp {
     this.width = 2;
     this.height = 3.5;
     this.waterArr = [];
-    this.medpackArr = [];
-    this.bonusArr = [];
+    this.medkitArr = [];
+    this.partsArr = [];
   }
 
   detectPickUpCollection(item) {
@@ -23,11 +23,11 @@ class PickUp {
           increaseHealth("water");
           pickUp.removePickup(item)
           break;
-        case "medpack":
+        case "medkit":
           player.health += 20;
-          increaseHealth("medpack");
+          increaseHealth("medkit");
           pickUp.removePickup(item)
-        case "bonus":
+        case "parts":
           player.score += 100;
           displayScore();
           pickUp.removePickup(item)
@@ -41,8 +41,12 @@ class PickUp {
         pickUp.waterArr.splice(pickUp.waterArr.indexOf(item), 1);
         item.div.remove(item);        
         break;
-      case "bonus":
-        pickUp.bonusArr.splice(pickUp.bonusArr.indexOf(item), 1);
+      case "medkit":
+        pickUp.medkitArr.splice(pickUp.medkitArr.indexOf(item), 1);
+        item.div.remove(item);        
+        break;
+      case "parts":
+        pickUp.partsArr.splice(pickUp.partsArr.indexOf(item), 1);
         item.div.remove(item);        
         break;
     }
@@ -52,18 +56,20 @@ class PickUp {
 class Water extends PickUp {
   constructor() {
     super();
-    this.width = 3;
-    this.height = 3;
+    this.width = 1.5;
+    this.height = 2.7;
   }
 }
 
-class Bonus extends PickUp {
+class Parts extends PickUp {
   constructor() {
     super();
+    this.width = 1.3;
+    this.height = 2.8;
   }
 }
 
-class Medpack extends PickUp {
+class Medkit extends PickUp {
   constructor() {
     super();
   }

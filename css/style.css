@@ -10,15 +10,16 @@
 }
 
 #healthBar {
-    background-color: green;
-    height: 3vh;
-    width: 15vw;
+  background-color: green;
+  height: 3vh;
+  width: 15vw;
 }
 
 span {
-    position: absolute;
-    margin-left: 90%;
-    font-size: 2em;
+  position: absolute;
+  margin-left: 90%;
+  font-size: 2em;
+  background-color: grey;
 }
 
 .player {
@@ -45,7 +46,19 @@ span {
 }
 
 .water {
-    position: absolute;
-    background-image: url(../images/water.png);
-    background-repeat: no-repeat;
+  position: absolute;
+  background-image: url(../images/water.png);
+  background-repeat: no-repeat;
+}
+
+.medkit {
+  position: absolute;
+  background-image: url(../images/medkit.png);
+  background-repeat: no-repeat;
+}
+
+.parts {
+  position: absolute;
+  background-image: url(../images/parts.png);
+  background-repeat: no-repeat;
 }

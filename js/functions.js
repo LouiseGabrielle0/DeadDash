@@ -18,7 +18,7 @@ document.addEventListener("keydown", function (event) {
     case "ArrowDown":
       player.movePlayer("down");
       break;
-    case "s":
+    case " ":
       if (game.gamerun === false) {
         game.gamerun = true;
         game.runGame();
@@ -56,7 +56,7 @@ function increaseHealth(item){
     case "water":
   document.getElementById("healthBar").value += 20;
     break;
-    case "medpack":
+    case "medkit":
   document.getElementById("healthBar").value += 50    
 }
 }
