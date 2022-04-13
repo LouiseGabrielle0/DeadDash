@@ -137,7 +137,7 @@ class BloodSplat extends Zombie {
     super();
     this.positionX = positionX;
     this.positionY = positionY;
-    this.height = 2;
+    this.height = 3;
     this.width = 2;
   }
 }
