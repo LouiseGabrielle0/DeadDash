@@ -29,11 +29,14 @@ document.addEventListener("keydown", function (event) {
       }
       break;
     case "r":
+    case "R":  
       game.reloadGame();
     case "a":
+    case "A":
       weapon.directWeapon("left");
       break;
     case "d":
+    case "D":
       weapon.directWeapon("right");
       break;
   }

@@ -3,6 +3,8 @@ class Zombie {
     this.div = null;
     this.height = 8.5;
     this.width = 3.1;
+    this.zombieRightArr = [];
+    this.zombieLeftArr = [];
   }
 
   moveZombieLeft() {
@@ -40,6 +42,16 @@ class Zombie {
         zombie.div.remove(zombie);
         break;
     }
+  }
+
+  turnZombieAround(zombie){
+    switch (zombie.div.className) {
+      case "left":
+      zombie.div.className = "right"
+      this.zombieLeftArr.splice(game.zombieArr.indexOf(zombie), 1);
+
+    }
+
   }
 }
 

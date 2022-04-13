@@ -1,3 +1,9 @@
+body{
+    background-image: url(../images/body-background.jpg);
+    background-repeat: no-repeat;
+    font-family: 'Creepster', cursive;
+}
+
 #container {
   position: relative;
   background-color: black;
@@ -6,10 +12,14 @@
   height: 65vh;
   width: 50vw;
   margin: 5rem;
+  margin-left: 20rem;
   padding-bottom: 5rem;
+  border: 5px solid black;
 }
 
+
 #healthBar {
+  position: absolute;
   background-color: green;
   height: 3vh;
   width: 15vw;
@@ -18,7 +28,7 @@
 span {
   position: absolute;
   margin-left: 90%;
-  font-size: 2em;
+  font-size: 2.5em;
   background-color: grey;
 }
 
@@ -33,6 +43,12 @@ span {
   background-image: url(../images/mark-right.png);
   background-repeat: no-repeat;
 }
+
+.zombieMarkLeft {
+    position: absolute;
+    background-image: url(../images/mark-left.png);
+    background-repeat: no-repeat;
+  }
 
 .zombieKaren {
   position: absolute;
@@ -61,4 +77,42 @@ span {
   position: absolute;
   background-image: url(../images/parts.png);
   background-repeat: no-repeat;
+}
+
+#info {
+    position: absolute;
+    left: 60%;
+    background-color: black;
+    background-image: url(../images/info-background.jpg);
+    background-repeat: no-repeat;
+    height: 58vh;
+    width: 20vw;
+    margin: 5rem;
+    margin-left: 20rem;
+    padding-bottom: 5rem;
+    border: 5px solid black;
+}
+
+h2 {
+    font-size: 5em;
+    text-shadow: 2px 2px #FF0000;
+    text-align: center;
+}
+
+h3 {
+    font-size: 3em;
+    text-shadow: 2px 2px #FF0000;
+    text-align: center;
+}
+
+h4 {
+    font-size: 2em;
+    text-shadow: 2px 2px #FF0000;
+    text-align: center;
+}
+
+h5{
+    font-size: 1.5em;
+    text-shadow: 2px 2px #FF0000;
+    text-align: center;
 }

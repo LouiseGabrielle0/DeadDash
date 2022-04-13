@@ -89,6 +89,7 @@ class Game {
         water.div = this.createNewElement("water");
         this.drawNewElement(water);
         pickUp.waterArr.push(water);
+       
       }
 
       pickUp.waterArr.forEach((water) => {
@@ -100,6 +101,7 @@ class Game {
         medkit.div = this.createNewElement("medkit");
         this.drawNewElement(medkit);
         pickUp.medkitArr.push(medkit);
+        
       }
 
       pickUp.medkitArr.forEach((medkit) => {
@@ -111,6 +113,7 @@ class Game {
         parts.div = this.createNewElement("parts");
         this.drawNewElement(parts);
         pickUp.partsArr.push(parts);
+     
       }
 
       pickUp.partsArr.forEach((parts) => {
