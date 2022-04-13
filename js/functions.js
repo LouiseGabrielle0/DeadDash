@@ -53,10 +53,10 @@ function deductHealth() {
 
 function increaseHealth(item){
   switch (item) {
-    case water:
+    case "water":
   document.getElementById("healthBar").value += 20;
     break;
-    case medpack:
+    case "medpack":
   document.getElementById("healthBar").value += 50    
 }
 }

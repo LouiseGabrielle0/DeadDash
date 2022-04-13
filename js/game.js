@@ -1,14 +1,15 @@
 const playArea = document.getElementById("container");
 const weapon = new Weapon();
 const zombie = new Zombie();
+const pickUp = new PickUp();
 
 class Game {
   constructor() {
     this.gamerun = false;
     this.timer = null;
     this.time = 0;
-    this.zombieArr = [];
-    this.zombieFasterArr = [];
+    this.zombieArr = []; // change to zombieRightArr
+    this.zombieFasterArr = []; // change to zombieLeftArr
   }
 
   createNewElement(className, Id) {
@@ -55,14 +56,14 @@ class Game {
         this.zombieArr.push(slowZombie);
       }
 
-      if (this.time % 250 === 0) {
+      if (this.time % 200 === 0) {
         let fastZombie = new ZombieKaren();
         fastZombie.div = this.createNewElement("zombieKaren");
         this.drawNewElement(fastZombie);
         this.zombieFasterArr.push(fastZombie);
       }
 
-      this.zombieFasterArr.forEach((zombie) => {
+        this.zombieFasterArr.forEach((zombie) => {
         zombie.moveZombieLeftFaster();
         this.drawNewElement(zombie);
         zombie.detectZombieCollsion(zombie);
@@ -82,6 +83,17 @@ class Game {
         this.drawNewElement(bullet);
         weapon.deleteBulletRight(bullet);
       });
+
+      if (this.time % 200 === 0) {
+        let water = new Water();
+        water.div = this.createNewElement("water")
+        this.drawNewElement(water)
+        pickUp.waterArr.push(water);
+      }
+
+      pickUp.waterArr.forEach((water) => {
+        pickUp.detectPickUpCollection(water)
+      })
 
       this.time++;
     }, 100);
