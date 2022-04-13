@@ -3,8 +3,8 @@ class Player {
     this.div = null
     this.height = 8.5;
     this.width = 4;
-    this.positionY = 48;
-    this.positionX = 11;
+    this.positionY = 35;
+    this.positionX = 25;
     this.health = 100
     this.score = 0
     

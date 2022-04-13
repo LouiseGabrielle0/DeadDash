@@ -1,7 +1,8 @@
 class Zombie {
   constructor() {
+    this.div = null;
     this.height = 8.5;
-    this.width = 3;
+    this.width = 3.1;
     this.positionX = 0;
     this.positionY = Math.floor(Math.random() * 60);
   }
@@ -22,7 +23,7 @@ class Zombie {
       game.player.height + game.player.positionY > zombie.positionY
     ) {
       player.health-=5
-      console.log(player.health)  
+      console.log("collision detected")
       deductHealth();
     }
   }
@@ -44,9 +45,6 @@ class Zombie {
 class ZombieMark extends Zombie {
   constructor() {
     super();
-    this.div = null;
-    this.height = 16;
-    this.width = 6;
     this.positionX = 0;
     this.positionY = Math.floor(Math.random() * 50);
   }
@@ -62,9 +60,6 @@ class ZombieMark extends Zombie {
 class ZombieKaren extends Zombie {
   constructor() {
     super();
-    this.div = null;
-    this.height = 16;
-    this.width = 6;
     this.positionX = 48;
     this.positionY = Math.floor(Math.random() * 50);
   }
