@@ -110,7 +110,7 @@ class ZombieKaren extends Zombie {
 class ZombieJay extends Zombie {
   constructor() {
     super();
-    this.positionX = Math.floor(Math.random() * 50);
+    this.positionX = Math.floor(Math.random() * 48);
     this.positionY = 60;
     this.height = 7.9;
     this.width = 2.8;

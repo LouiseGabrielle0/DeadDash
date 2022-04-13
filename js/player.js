@@ -10,19 +10,19 @@ class Player {
   }
 
   moveLeft() {
-    this.positionX--;
+    this.positionX-=1.5;
   }
 
   moveRight() {
-    this.positionX++;
+    this.positionX+=1.5;
   }
 
   moveDown() {
-    this.positionY--;
+    this.positionY-=1.5;
   }
 
   moveUp() {
-    this.positionY++;
+    this.positionY+=1.5;
   }
 
   movePlayer(direction) {
