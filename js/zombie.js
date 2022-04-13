@@ -41,22 +41,23 @@ class Zombie {
         game.zombieFasterArr.splice(game.zombieFasterArr.indexOf(zombie), 1);
         zombie.div.remove(zombie);
         break;
-      case "zombieJayA":
+      case "zombieJay":
       game.zombieFastestArr.splice(game.zombieFastestArr.indexOf(zombie), 1);
       zombie.div.remove(zombie);
       break;
     }
   }
 
-  turnZombieAround(zombie){
-    switch (zombie.div.className) {
-      case "left":
-      zombie.div.className = "right"
-      this.zombieLeftArr.splice(game.zombieArr.indexOf(zombie), 1);
+  // Looking to add it ability to turn zombies once they reach the end of the playArea and have them go back in the opposite direction
+  // turnZombieAround(zombie){
+  //   switch (zombie.div.className) {
+  //     case "left":
+  //     zombie.div.className = "right"
+  //     this.zombieLeftArr.splice(game.zombieArr.indexOf(zombie), 1);
 
-    }
+  //   }
 
-  }
+  // }
 }
 
 class ZombieMark extends Zombie {
