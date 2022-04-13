@@ -7,7 +7,7 @@ class Game {
   constructor() {
     this.gamerun = false;
     this.timer = null;
-    this.time = 0;
+    this.time = 1;
     this.zombieArr = []; // change to zombieRightArr
     this.zombieFasterArr = []; // change to zombieLeftArr
   }
@@ -63,7 +63,7 @@ class Game {
         this.zombieFasterArr.push(fastZombie);
       }
 
-        this.zombieFasterArr.forEach((zombie) => {
+      this.zombieFasterArr.forEach((zombie) => {
         zombie.moveZombieLeftFaster();
         this.drawNewElement(zombie);
         zombie.detectZombieCollsion(zombie);
@@ -86,36 +86,36 @@ class Game {
 
       if (this.time % 200 === 0) {
         let water = new Water();
-        water.div = this.createNewElement("water")
-        this.drawNewElement(water)
+        water.div = this.createNewElement("water");
+        this.drawNewElement(water);
         pickUp.waterArr.push(water);
       }
 
       pickUp.waterArr.forEach((water) => {
-        pickUp.detectPickUpCollection(water)
-      })
+        pickUp.detectPickUpCollection(water);
+      });
 
       if (this.time % 500 === 0) {
         let medkit = new Medkit();
-        medkit.div = this.createNewElement("medkit")
-        this.drawNewElement(medkit)
+        medkit.div = this.createNewElement("medkit");
+        this.drawNewElement(medkit);
         pickUp.medkitArr.push(medkit);
       }
 
       pickUp.medkitArr.forEach((medkit) => {
-        pickUp.detectPickUpCollection(medkit)
-      })
+        pickUp.detectPickUpCollection(medkit);
+      });
 
       if (this.time % 200 === 0) {
         let parts = new Parts();
-        parts.div = this.createNewElement("parts")
-        this.drawNewElement(parts)
+        parts.div = this.createNewElement("parts");
+        this.drawNewElement(parts);
         pickUp.partsArr.push(parts);
       }
- 
+
       pickUp.partsArr.forEach((parts) => {
-        pickUp.detectPickUpCollection(parts)
-      })
+        pickUp.detectPickUpCollection(parts);
+      });
 
       this.time++;
     }, 100);
@@ -137,6 +137,4 @@ class Game {
     clearInterval(this.timer);
     return;
   }
-
-
 }

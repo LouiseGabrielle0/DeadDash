@@ -3,7 +3,6 @@ class Zombie {
     this.div = null;
     this.height = 8.5;
     this.width = 3.1;
-
   }
 
   moveZombieLeft() {
@@ -21,25 +20,24 @@ class Zombie {
       game.player.positionY < zombie.positionY + zombie.height &&
       game.player.height + game.player.positionY > zombie.positionY
     ) {
-      wait(100)
+      wait(100);
       player.health -= 10;
       deductHealth();
       if (player.health <= -1) {
-      game.gameOver();
+        game.gameOver();
+      }
     }
-    
   }
-}
 
   removeZombie(zombie) {
     switch (zombie.div.className) {
       case "zombieMark":
         game.zombieArr.splice(game.zombieArr.indexOf(zombie), 1);
-        zombie.div.remove(zombie);        
+        zombie.div.remove(zombie);
         break;
       case "zombieKaren":
         game.zombieFasterArr.splice(game.zombieFasterArr.indexOf(zombie), 1);
-        zombie.div.remove(zombie);        
+        zombie.div.remove(zombie);
         break;
     }
   }

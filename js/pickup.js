@@ -21,16 +21,16 @@ class PickUp {
         case "water":
           player.health += 20;
           increaseHealth("water");
-          pickUp.removePickup(item)
+          pickUp.removePickup(item);
           break;
         case "medkit":
           player.health += 20;
           increaseHealth("medkit");
-          pickUp.removePickup(item)
+          pickUp.removePickup(item);
         case "parts":
           player.score += 100;
           displayScore();
-          pickUp.removePickup(item)
+          pickUp.removePickup(item);
       }
     }
   }
@@ -39,15 +39,15 @@ class PickUp {
     switch (item.div.className) {
       case "water":
         pickUp.waterArr.splice(pickUp.waterArr.indexOf(item), 1);
-        item.div.remove(item);        
+        item.div.remove(item);
         break;
       case "medkit":
         pickUp.medkitArr.splice(pickUp.medkitArr.indexOf(item), 1);
-        item.div.remove(item);        
+        item.div.remove(item);
         break;
       case "parts":
         pickUp.partsArr.splice(pickUp.partsArr.indexOf(item), 1);
-        item.div.remove(item);        
+        item.div.remove(item);
         break;
     }
   }
