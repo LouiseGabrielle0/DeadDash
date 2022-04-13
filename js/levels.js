@@ -1,15 +1,15 @@
-const game = new Game();
-const zombie = new Zombie();
+// const game = new Game();
+// const zombie = new Zombie();
 
-class Levels {
-    constructor(
-    )
-}
+// class Levels {
+//     constructor(
+//     )
+// }
 
-class Level2 extends Levels {
-    constructor(){
-        super()
-}
+// class Level2 extends Levels {
+//     constructor(){
+//         super()
+// }
 
 // An option to make the next level harder 
 
@@ -117,4 +117,4 @@ class Level2 extends Levels {
 
 
 
-}
+// }

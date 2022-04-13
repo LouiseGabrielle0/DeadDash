@@ -85,6 +85,13 @@ span {
   background-repeat: no-repeat;
 }
 
+.bloodSplat{
+  position: absolute;
+  background-image: url(../images/bloodsplat.png);
+  background-color: black;
+  background-repeat: no-repeat;
+}
+
 #info {
     position: absolute;
     left: 60%;

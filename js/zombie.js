@@ -42,9 +42,9 @@ class Zombie {
         zombie.div.remove(zombie);
         break;
       case "zombieJay":
-      game.zombieFastestArr.splice(game.zombieFastestArr.indexOf(zombie), 1);
-      zombie.div.remove(zombie);
-      break;
+        game.zombieFastestArr.splice(game.zombieFastestArr.indexOf(zombie), 1);
+        zombie.div.remove(zombie);
+        break;
     }
   }
 
@@ -58,6 +58,15 @@ class Zombie {
   //   }
 
   // }
+
+  turnZombieToBlood(zombie) {
+    let zombiePositionX = zombie.positionX;
+    let zombiePositionY = zombie.positionY;
+
+    let bloodSplat = new BloodSplat(zombiePositionX, zombiePositionY);
+    bloodSplat.div = game.createNewElement("bloodSplat");
+    game.drawNewElement(bloodSplat);
+  }
 }
 
 class ZombieMark extends Zombie {
@@ -105,7 +114,6 @@ class ZombieJay extends Zombie {
     this.positionY = 60;
     this.height = 7.9;
     this.width = 2.8;
-
   }
 
   moveZombieDownFastest() {
@@ -116,11 +124,18 @@ class ZombieJay extends Zombie {
     this.positionX += 1.5;
   }
 
-  
   deleteZombieJay(zombie) {
     if (zombie.positionY === 0 || zombie.positionX === 0.5) {
       zombie.div.remove(zombie);
       game.zombieFastestArr.splice(game.zombieFastestArr.indexOf(zombie), 1);
     }
+  }
+}
+
+class BloodSplat extends Zombie {
+  constructor(positionX, positionY) {
+    super();
+    this.positionX = positionX;
+    this.positionY = positionY;
   }
 }

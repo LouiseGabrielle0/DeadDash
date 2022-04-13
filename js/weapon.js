@@ -63,6 +63,7 @@ class Weapon {
         bullet.positionY < item.positionY + item.height &&
         bullet.height + bullet.positionY > item.positionY
       ) {
+        zombie.turnZombieToBlood(item);
         zombie.removeZombie(item);
         player.score += 50;
         this.removeBullet(bullet);
