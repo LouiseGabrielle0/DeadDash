@@ -103,7 +103,7 @@ class Game {
         weapon.deleteBulletRight(bullet);
       });
 
-      if (this.time % 150 === 0) {
+      if (this.time % 250 === 0) {
         let water = new Water();
         water.div = this.createNewElement("water");
         this.drawNewElement(water);
@@ -115,7 +115,7 @@ class Game {
         pickUp.detectPickUpCollection(water);
       });
 
-      if (this.time % 300 === 0) {
+      if (this.time % 500 === 0) {
         let medkit = new Medkit();
         medkit.div = this.createNewElement("medkit");
         this.drawNewElement(medkit);

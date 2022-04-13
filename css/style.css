@@ -15,6 +15,7 @@ body{
   margin-left: 20rem;
   padding-bottom: 5rem;
   border: 5px solid black;
+  z-index: 1;
 }
 
 
@@ -36,18 +37,21 @@ span {
   position: absolute;
   background-image: url(../images/Louise-trimmy-right.png);
   background-repeat: no-repeat;
+  z-index: 2;
 }
 
 .playerLeft {
   position: absolute;
   background-image: url(../images/Louise-trimmy-left.png);
   background-repeat: no-repeat;
+  z-index: 5;
 }
 
 .playerRight {
   position: absolute;
   background-image: url(../images/Louise-trimmy-right.png);
   background-repeat: no-repeat;
+  z-index: 5;
 }
 
 .zombieMark {
@@ -76,7 +80,7 @@ span {
 
 .bullet {
   position: absolute;
-  background-color: rgb(219, 97, 15);
+  background-color: black;
 }
 
 .water {
@@ -101,6 +105,7 @@ span {
   position: absolute;
   background-image: url(../images/bloodsplat.png);
   background-repeat: no-repeat;
+  z-index: -1;
 }
 
 #info {

@@ -5,8 +5,8 @@ class Weapon {
     this.positionX = positionX;
     this.positionY = positionY;
     this.div = null;
-    this.width = 0.2;
-    this.height = 0.2;
+    this.width = 0.3;
+    this.height = 0.3;
     this.bulletRightArr = [];
     this.bulletLeftArr = [];
   }
