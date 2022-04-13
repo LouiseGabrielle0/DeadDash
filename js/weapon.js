@@ -47,14 +47,13 @@ class Weapon {
         bullet.positionY < item.positionY + item.height &&
         bullet.height + bullet.positionY > item.positionY
       ) {
+        zombie.removeZombie(item);
         player.score += 50;
-        zombie.removeZombie(item)
         this.deleteBulletLeft(bullet);
-        console.log(player.score);
-            }
+        displayScore();
+      }
     });
   }
-
 
   detectBulletCollisionRight(item) {
     weapon.bulletRightArr.forEach((bullet) => {
@@ -64,21 +63,19 @@ class Weapon {
         bullet.positionY < item.positionY + item.height &&
         bullet.height + bullet.positionY > item.positionY
       ) {
+        zombie.removeZombie(item);
         player.score += 50;
-        zombie.removeZombie(item)
-        this.removeBullet(bullet)
-        console.log(player.score);
-        }
-
-        
-      })}
-
-      removeBullet(bullet){
-        bullet.div.remove(bullet);
-        this.bulletLeftArr.splice(this.bulletLeftArr.indexOf(bullet), 1);
-        this.bulletRightArr.splice(this.bulletRightArr.indexOf(bullet), 1);
+        this.removeBullet(bullet);
+        displayScore();
       }
-  
+    });
+  }
+
+  removeBullet(bullet) {
+    bullet.div.remove(bullet);
+    this.bulletLeftArr.splice(this.bulletLeftArr.indexOf(bullet), 1);
+    this.bulletRightArr.splice(this.bulletRightArr.indexOf(bullet), 1);
+  }
 
   deleteBulletLeft(bullet) {
     if (bullet.positionX < 0) {

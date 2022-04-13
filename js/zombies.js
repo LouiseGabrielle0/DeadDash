@@ -22,21 +22,25 @@ class Zombie {
       game.player.positionY < zombie.positionY + zombie.height &&
       game.player.height + game.player.positionY > zombie.positionY
     ) {
-      player.health-=5
-      console.log("collision detected")
+      wait(100)
+      player.health -= 10;
       deductHealth();
+      if (player.health <= -1) {
+      game.gameOver();
     }
+    
   }
+}
 
   removeZombie(zombie) {
     switch (zombie.div.className) {
       case "zombieMark":
-        zombie.div.remove(zombie);
-        game.zombieFasterArr.splice(game.zombieFasterArr.indexOf(zombie), 1);
+        game.zombieArr.splice(game.zombieArr.indexOf(zombie), 1);
+        zombie.div.remove(zombie);        
         break;
       case "zombieKaren":
-        zombie.div.remove(zombie);
         game.zombieFasterArr.splice(game.zombieFasterArr.indexOf(zombie), 1);
+        zombie.div.remove(zombie);        
         break;
     }
   }
@@ -80,7 +84,8 @@ class ZombieKaren extends Zombie {
   }
 }
 
-class ZombieJay extends Zombie { // final zombie hopefully moving down
+class ZombieJay extends Zombie {
+  // final zombie hopefully moving down
   constructor() {
     super();
   }

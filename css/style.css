@@ -1,33 +1,45 @@
 #container {
-    position: relative;
-    background-color: black;
-    background-image: url(../images/zombie-background-road.png);
-    background-repeat: no-repeat;
-    height: 65vh;
-    width: 50vw;
-    margin: 5rem;
-    padding-bottom: 5rem;
+  position: relative;
+  background-color: black;
+  background-image: url(../images/zombie-background-road.png);
+  background-repeat: no-repeat;
+  height: 65vh;
+  width: 50vw;
+  margin: 5rem;
+  padding-bottom: 5rem;
 }
 
 .player {
-    position: absolute;
-    background-image: url(../images/Louise-trimmy-right.png);
-    background-repeat: no-repeat;
+  position: absolute;
+  background-image: url(../images/Louise-trimmy-right.png);
+  background-repeat: no-repeat;
 }
 
-.zombieMark{
-    position: absolute;
-    background-image: url(../images/mark-right.png);
-    background-repeat: no-repeat;
+.zombieMark {
+  position: absolute;
+  background-image: url(../images/mark-right.png);
+  background-repeat: no-repeat;
 }
 
-.zombieKaren{
-    position: absolute;
-    background-image: url(../images/karen-left.png);
-    background-repeat: no-repeat;
+.zombieKaren {
+  position: absolute;
+  background-image: url(../images/karen-left.png);
+  background-repeat: no-repeat;
 }
 
-.bullet{
+.bullet {
+  position: absolute;
+  background-color: rgb(219, 97, 15);
+}
+
+#healthBar {
+    background-color: green;
+    height: 3vh;
+    width: 15vw;
+}
+
+span {
     position: absolute;
-    background-color: rgb(219, 97, 15);
+    margin-left: 90%;
+    font-size: 2em;
 }
