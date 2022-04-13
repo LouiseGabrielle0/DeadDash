@@ -88,7 +88,6 @@ span {
 .bloodSplat{
   position: absolute;
   background-image: url(../images/bloodsplat.png);
-  background-color: black;
   background-repeat: no-repeat;
 }
 
@@ -98,7 +97,7 @@ span {
     background-color: black;
     background-image: url(../images/info-background.jpg);
     background-repeat: no-repeat;
-    height: 58vh;
+    height: 60vh;
     width: 20vw;
     margin: 5rem;
     margin-left: 20rem;

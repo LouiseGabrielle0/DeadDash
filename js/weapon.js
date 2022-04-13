@@ -48,6 +48,7 @@ class Weapon {
         bullet.height + bullet.positionY > item.positionY
       ) {
         zombie.removeZombie(item);
+        zombie.removeZombie(item);
         player.score += 50;
         this.deleteBulletLeft(bullet);
         displayScore();
