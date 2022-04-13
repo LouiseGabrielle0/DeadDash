@@ -59,14 +59,14 @@ class Game {
         this.zombieArr.push(slowZombie);
       }
 
-      if (this.time % 50 === 0) {
+      if (this.time % 60 === 0) {
         let fastZombie = new ZombieKaren();
         fastZombie.div = this.createNewElement("zombieKaren");
         this.drawNewElement(fastZombie);
         this.zombieFasterArr.push(fastZombie);
       }
 
-      if (this.time % 60 === 0) {
+      if (this.time % 70 === 0) {
         let fastestZombie = new ZombieJay();
         fastestZombie.div = this.createNewElement("zombieJay");
         this.drawNewElement(fastestZombie);
@@ -103,7 +103,7 @@ class Game {
         weapon.deleteBulletRight(bullet);
       });
 
-      if (this.time % 200 === 0) {
+      if (this.time % 150 === 0) {
         let water = new Water();
         water.div = this.createNewElement("water");
         this.drawNewElement(water);
@@ -115,7 +115,7 @@ class Game {
         pickUp.detectPickUpCollection(water);
       });
 
-      if (this.time % 500 === 0) {
+      if (this.time % 300 === 0) {
         let medkit = new Medkit();
         medkit.div = this.createNewElement("medkit");
         this.drawNewElement(medkit);

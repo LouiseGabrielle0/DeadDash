@@ -95,12 +95,14 @@ class Weapon {
 
   directWeapon(direction) {
     if (direction === "left") {
-      game.player.div.style.backgroundImage =
-        "url('../images/Louise-trimmy-left.png')";
+      // game.player.div.style.backgroundImage =
+      //   "url('../images/Louise-trimmy-left.png')";
+      game.player.div.className = "playerLeft";
       this.shootWeapon(direction);
     } else if (direction === "right") {
-      game.player.div.style.backgroundImage =
-        "url('../images/Louise-trimmy-right.png')";
+      game.player.div.className = "playerRight";
+      // game.player.div.style.backgroundImage =
+      //   "url('../images/Louise-trimmy-right.png')";
       this.shootWeapon(direction);
     }
   }

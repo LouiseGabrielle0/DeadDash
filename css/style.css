@@ -38,6 +38,18 @@ span {
   background-repeat: no-repeat;
 }
 
+.playerLeft {
+  position: absolute;
+  background-image: url(../images/Louise-trimmy-left.png);
+  background-repeat: no-repeat;
+}
+
+.playerRight {
+  position: absolute;
+  background-image: url(../images/Louise-trimmy-right.png);
+  background-repeat: no-repeat;
+}
+
 .zombieMark {
   position: absolute;
   background-image: url(../images/mark-right.png);
