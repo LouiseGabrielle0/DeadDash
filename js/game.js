@@ -10,6 +10,7 @@ class Game {
     this.time = 1;
     this.zombieArr = []; // change to zombieRightArr
     this.zombieFasterArr = []; // change to zombieLeftArr
+    this.zombieFastestArr = [];
   }
 
   createNewElement(className, Id) {
@@ -38,6 +39,8 @@ class Game {
   runGame() {
     let slowZombie = new ZombieMark();
     slowZombie.div = this.createNewElement("zombieMark");
+    this.drawNewElement(slowZombie);
+    this.zombieArr.push(slowZombie);
 
     this.timer = setInterval(() => {
       this.zombieArr.forEach((zombie) => {
@@ -63,11 +66,27 @@ class Game {
         this.zombieFasterArr.push(fastZombie);
       }
 
+      if (this.time % 60 === 0) {
+        let fastestZombie = new ZombieJay();
+        fastestZombie.div = this.createNewElement("zombieJay");
+        this.drawNewElement(fastestZombie);
+        this.zombieFastestArr.push(fastestZombie);
+      }
+
       this.zombieFasterArr.forEach((zombie) => {
         zombie.moveZombieLeftFaster();
         this.drawNewElement(zombie);
         zombie.detectZombieCollsion(zombie);
         zombie.deleteZombieKaren(zombie);
+        weapon.detectBulletCollisionLeft(zombie);
+        weapon.detectBulletCollisionRight(zombie);
+      });
+
+      this.zombieFastestArr.forEach((zombie) => {
+        zombie.moveZombieDownFastest();
+        this.drawNewElement(zombie);
+        zombie.detectZombieCollsion(zombie);
+        zombie.deleteZombieJay(zombie);
         weapon.detectBulletCollisionLeft(zombie);
         weapon.detectBulletCollisionRight(zombie);
       });
@@ -108,7 +127,7 @@ class Game {
         pickUp.detectPickUpCollection(medkit);
       });
 
-      if (this.time % 200 === 0) {
+      if (this.time % 300 === 0) {
         let parts = new Parts();
         parts.div = this.createNewElement("parts");
         this.drawNewElement(parts);

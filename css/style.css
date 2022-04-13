@@ -56,6 +56,12 @@ span {
   background-repeat: no-repeat;
 }
 
+.zombieJay {
+  position: absolute;
+  background-image: url(../images/Jay.png); 
+  background-repeat: no-repeat;
+}
+
 .bullet {
   position: absolute;
   background-color: rgb(219, 97, 15);
@@ -103,6 +109,8 @@ h3 {
     font-size: 3em;
     text-shadow: 2px 2px #FF0000;
     text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 h4 {
