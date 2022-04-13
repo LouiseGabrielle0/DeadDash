@@ -49,14 +49,14 @@ class Game {
         weapon.detectBulletCollisionRight(zombie);
       });
 
-      if (this.time % 50 === 0) {
+      if (this.time % 30 === 0) {
         let slowZombie = new ZombieMark();
         slowZombie.div = this.createNewElement("zombieMark");
         this.drawNewElement(slowZombie);
         this.zombieArr.push(slowZombie);
       }
 
-      if (this.time % 150 === 0) {
+      if (this.time % 50 === 0) {
         let fastZombie = new ZombieKaren();
         fastZombie.div = this.createNewElement("zombieKaren");
         this.drawNewElement(fastZombie);
