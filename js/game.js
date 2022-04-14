@@ -155,7 +155,7 @@ class Game {
 
   gameOver() {
     clearInterval(this.timer);
-    window.location.href = "../gameover.html"
+    document.location.href = "../gameover.html"
     displayScore();
   }
 }
