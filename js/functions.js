@@ -1,4 +1,5 @@
 const game = new Game();
+const pew = new Audio('../audio/pew.wav')
 
 game.start();
 
@@ -75,4 +76,8 @@ function wait(ms){
   while (end < start + ms){
     end = new Date().getTime();
   }
+}
+
+function makePew(){
+  pew.play()
 }

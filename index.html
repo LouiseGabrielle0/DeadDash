@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zombie-Survial</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeadDash</title>
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,45 +13,30 @@
       href="https://fonts.googleapis.com/css2?family=Creepster&display=swap"
       rel="stylesheet"
     />
-  </head>
-
-  <body>
-
-  
-
-    <div id="background">
-      <div id="info">
-        <h2>Survive the Zombies</h2>
+</head>
+<body>
+    <section id="start-screen">
+         <div id="start-container">
+        <h2>Dead-Dash</h2>
+        <p id="start-text"> The World fell manys moons ago, and you have been surving amougst the walking dead. </br>
+            </br>
+            A recent solar flare has caused the zombies to run back and forth, but not chase you?! </br>
+            <br>
+            take this opportunity to kill as many as possible </p>
       </br>
-        <h3>Controls</h3>
+        <h3>Stay Away From The Zombies</h3>
+    </br>
+    <br>
+        <h4>Shoot with A and D</h4>
       </br>
-        <h4>Start Game - Space Bar</h4>
-        <h4>Move - Arrow Keys</h4>
-        <h4>Shoot Left - A</h4>
-        <h4>Shoot Right - D</h4>
-        <h4>Pause Game - Space Bar</h4>
-        <h4>Resart Game - R</h4>
-      </br>
-        <h5>Collect Water + 10 Health</h5>
-        <h5>Collect MedKits + 50 Health</h5>
-        <h5>Collect Parts + 100 Points</h5>
-      </br>
-        <h4>Shoot Zombies, Have Fun</h4>
-      </br>
-        <h3>Survive!</h3>
-      </div>
-      <div id="container">
-        <span id="score" class="score"></span>
-      </div>
-
-  <script src="./js/zombie.js"></script>
-    <script src="./js/player.js"></script>
-    <script src="./js/weapon.js"></script>
-    <script src="./js/pickup.js"></script>
-    <script src="./js/game.js"></script>
-    <script src="./js/functions.js"></script>
-    <!-- <script src="./js/levels.js"></script> -->
-     
-    </div>
-  </body>
+      <h4>Move with Arrows</h4>
+    </br>
+    <h4>Collect drops for health and points</h4>
+</br>
+<h4>Press Spacebar to start/pause</h4>
+        <button id="ready-player-one" onclick="start.html" >Ready Player One</button>
+        </div>
+    </section>
+    <script src="./js/buttons.js"></script>
+</body>
 </html>

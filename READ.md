@@ -10,7 +10,7 @@ I have always loved zombie games so was very excited to learn to build my own.
 
 The game takes place in post apocalyotics times when the world has fallen to ruins and the dead walk the land. 
 
-A recent solar flare has cause the walking dead to run back and forth, and you, the player, take this opportunity to take as many of them out as possible, so that you can make your home town, or what's left of it, safer for yourself and the small suriving community. 
+A recent solar flare has caused the walking dead to run back and forth, and you, the player, take this opportunity to take as many of them out as possible, so that you can make your home town, or what's left of it, safer for yourself and the small suriving community. 
 
 # Instructions
 

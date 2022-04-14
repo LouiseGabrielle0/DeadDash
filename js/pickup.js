@@ -3,7 +3,7 @@ class PickUp {
     this.positionX = Math.floor(Math.random() * 48);
     this.positionY = Math.floor(Math.random() * 50);
     this.div = null;
-    this.width = 2;
+    this.width = 3;
     this.height = 3.5;
     this.waterArr = [];
     this.medkitArr = [];
@@ -56,21 +56,21 @@ class PickUp {
 class Water extends PickUp {
   constructor() {
     super();
-    this.width = 1.5;
-    this.height = 2.7;
+
   }
 }
 
 class Parts extends PickUp {
   constructor() {
     super();
-    this.width = 1.3;
-    this.height = 2.8;
+
   }
 }
 
 class Medkit extends PickUp {
   constructor() {
     super();
+    this.width = 4;
+    this.height = 4;
   }
 }

@@ -22,10 +22,10 @@ class Game {
   }
 
   drawNewElement(item) {
-    item.div.style.width = item.width + "vw";
-    item.div.style.height = item.height + "vh";
-    item.div.style.left = item.positionX + "vw";
-    item.div.style.bottom = item.positionY + "vh";
+    item.div.style.width = item.width + "%";
+    item.div.style.height = item.height + "%";
+    item.div.style.left = item.positionX + "%";
+    item.div.style.bottom = item.positionY + "%";
   }
 
   start() {

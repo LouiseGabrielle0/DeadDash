@@ -1,8 +1,8 @@
 class Zombie {
   constructor() {
     this.div = null;
-    this.height = 8.3;
-    this.width = 3.1;
+    this.height = 10;
+    this.width = 6.1;
     this.zombieRightArr = [];
     this.zombieLeftArr = [];
   }
@@ -73,11 +73,11 @@ class ZombieMark extends Zombie {
   constructor() {
     super();
     this.positionX = 0;
-    this.positionY = Math.floor(Math.random() * 50);
+    this.positionY = Math.floor(Math.random() * 60);
   }
 
   deleteZombieMark(zombie) {
-    if (zombie.positionX === 48) {
+    if (zombie.positionX === 96) {
       zombie.div.remove(zombie);
       game.zombieArr.splice(game.zombieArr.indexOf(zombie), 1);
     }
@@ -87,8 +87,8 @@ class ZombieMark extends Zombie {
 class ZombieKaren extends Zombie {
   constructor() {
     super();
-    this.positionX = 48;
-    this.positionY = Math.floor(Math.random() * 50);
+    this.positionX = 98;
+    this.positionY = Math.floor(Math.random() * 60);
   }
 
   moveZombieLeftFaster() {
@@ -110,10 +110,9 @@ class ZombieKaren extends Zombie {
 class ZombieJay extends Zombie {
   constructor() {
     super();
-    this.positionX = Math.floor(Math.random() * 48);
-    this.positionY = 60;
-    this.height = 7.9;
-    this.width = 2.8;
+    this.positionX = Math.floor(Math.random() * 80);
+    this.positionY = 70;
+    this.width = 5;
   }
 
   moveZombieDownFastest() {
@@ -125,7 +124,7 @@ class ZombieJay extends Zombie {
   }
 
   deleteZombieJay(zombie) {
-    if (zombie.positionY === 0 || zombie.positionX === 0.5) {
+    if (zombie.positionY < 0 || zombie.positionY < 0.5) {
       zombie.div.remove(zombie);
       game.zombieFastestArr.splice(game.zombieFastestArr.indexOf(zombie), 1);
     }
@@ -137,7 +136,8 @@ class BloodSplat extends Zombie {
     super();
     this.positionX = positionX;
     this.positionY = positionY;
-    this.height = 3;
-    this.width = 2;
+    this.height = 4;
+    this.width = 4;
   }
 }
+

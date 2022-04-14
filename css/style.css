@@ -2,6 +2,7 @@ body{
     background-image: url(../images/body-background.jpg);
     background-repeat: no-repeat;
     font-family: 'Creepster', cursive;
+    z-index: -5;
 }
 
 #container {
@@ -9,15 +10,51 @@ body{
   background-color: black;
   background-image: url(../images/zombie-background-road.png);
   background-repeat: no-repeat;
-  height: 65vh;
-  width: 50vw;
+  height: 50%;
+  width: 50%;
   margin: 5rem;
   margin-left: 20rem;
-  padding-bottom: 5rem;
+  padding-bottom: 50rem;
   border: 5px solid black;
   z-index: 1;
 }
 
+#start-container {
+  position: relative;
+  background-image: url(../images/start-background.jpg);
+  background-repeat: no-repeat;
+  height: 50%;
+  width: 50%;
+  margin: 5rem;
+  margin-left: 20rem;
+  padding: 3rem;
+  border: 5px solid black;
+  z-index: 1;
+}
+
+#start-text{
+  position: relative;
+  padding-top: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 1px 1px #c5070794;
+  padding-bottom: 2rem;
+}
+
+button {
+  position: relative;
+  left: 25%;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+#ready-player-one {
+  font-size: 5em;
+  background: black;
+  text-align: center;
+  font-family: Creepster;
+  color: red
+}
 
 #healthBar {
   position: absolute;
@@ -114,8 +151,7 @@ span {
     background-color: black;
     background-image: url(../images/info-background.jpg);
     background-repeat: no-repeat;
-    height: 60vh;
-    width: 20vw;
+    width: 20%;
     margin: 5rem;
     margin-left: 20rem;
     padding-bottom: 5rem;
@@ -123,14 +159,20 @@ span {
 }
 
 h2 {
+  font-size: 6em;
+  text-shadow: 1px 1px #FF0000;
+  text-align: center;
+}
+
+h2 {
     font-size: 5em;
-    text-shadow: 2px 2px #FF0000;
+    text-shadow: 1px 1px #FF0000;
     text-align: center;
 }
 
 h3 {
     font-size: 3em;
-    text-shadow: 2px 2px #FF0000;
+    text-shadow: 1px 1px #FF0000;
     text-align: center;
     text-decoration: underline;
     text-underline-offset: 4px;
@@ -138,12 +180,12 @@ h3 {
 
 h4 {
     font-size: 2em;
-    text-shadow: 2px 2px #FF0000;
+    text-shadow: 1px 1px #c5070794;
     text-align: center;
 }
 
 h5{
     font-size: 1.5em;
-    text-shadow: 2px 2px #FF0000;
+    text-shadow: 1px 1px #c5070794;
     text-align: center;
 }

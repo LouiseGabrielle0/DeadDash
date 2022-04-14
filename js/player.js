@@ -1,8 +1,8 @@
 class Player {
   constructor() {
     this.div = null;
-    this.height = 8.9;
-    this.width = 4;
+    this.height = 11;
+    this.width = 5;
     this.positionY = 35;
     this.positionX = 25;
     this.health = 100;
@@ -26,14 +26,18 @@ class Player {
   }
 
   movePlayer(direction) {
-    if (direction === "left" && game.player.positionX > 0) {
+    if (direction === "left" && game.player.positionX > 2) {
       game.player.moveLeft();
-    } else if (direction === "right" && game.player.positionX < 45) {
+      console.log(this.positionY)
+    } else if (direction === "right" && game.player.positionX < 90) {
       game.player.moveRight();
-    } else if (direction === "up" && game.player.positionY < 55) {
+      console.log(this.positionX)
+    } else if (direction === "up" && game.player.positionY < 68) {
       game.player.moveUp();
-    } else if (direction === "down" && game.player.positionY > 0) {
+      console.log(this.positionY)
+    } else if (direction === "down" && game.player.positionY > 2) {
       game.player.moveDown();
+      console.log(this.positionY)
     }
     game.drawNewElement(game.player);
   }

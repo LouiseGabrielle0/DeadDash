@@ -26,16 +26,18 @@ class Weapon {
   shootWeapon(direction) {
     let playerPositionX = game.player.positionX;
     let playerPositionY = game.player.positionY;
-    playerPositionY += 5;
+    playerPositionY += 7;
 
     const bullet = new Weapon(playerPositionX, playerPositionY);
     bullet.div = game.createNewElement("bullet");
     if (direction === "left") {
+      pew.play();
       this.bulletLeftArr.push(bullet);
       game.drawNewElement(bullet);
     } else if (direction === "right") {
       this.bulletRightArr.push(bullet);
       game.drawNewElement(bullet);
+      pew.play();
     }
   }
 
@@ -87,7 +89,7 @@ class Weapon {
   }
 
   deleteBulletRight(bullet) {
-    if (bullet.positionX > 48) {
+    if (bullet.positionX > 98) {
       bullet.div.remove(bullet);
       this.bulletRightArr.splice(this.bulletRightArr.indexOf(bullet), 1);
     }
