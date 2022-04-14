@@ -1,9 +1,7 @@
-const game = new Game();
 const pew = new Audio('../audio/pew.wav')
 
-game.start();
 
-console.log(game.gamerun);
+
 
 document.addEventListener("keydown", function (event) {
   switch (event.key) {
@@ -25,7 +23,6 @@ document.addEventListener("keydown", function (event) {
         game.runGame();
       } else if (game.gamerun === true) {
         game.gamerun = false;
-        console.log(game.gamerun);
         game.pauseGame();
       }
       break;

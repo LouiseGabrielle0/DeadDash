@@ -52,7 +52,7 @@ class Weapon {
         zombie.turnZombieToBlood(item);
         zombie.removeZombie(item);
         player.score += 50;
-        this.deleteBulletLeft(bullet);
+        this.removeBullet(bullet);
         displayScore();
       }
     });

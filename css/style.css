@@ -181,3 +181,25 @@ h5{
     text-shadow: 1px 1px #c5070794;
     text-align: center;
 }
+
+
+#levelup-container {
+  position: absolute;
+  background-image: url(../images/start-background.jpg);
+  background-repeat: no-repeat;
+  width: 30%;
+  margin: 5rem;
+  margin-left: 20em;
+  padding: 3rem;
+  border: 5px solid black;
+  z-index: 3;
+  display: none;
+}
+
+#next-level {
+  font-size: 2em;
+  background: black;
+  text-align: center;
+  font-family: Creepster;
+  color: red
+}
