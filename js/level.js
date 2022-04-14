@@ -15,21 +15,21 @@ class Level {
         weapon.detectBulletCollisionRight(zombie);
       });
 
-      if (game.time % 20 === 0) {
+      if (game.time % 60 === 0) {
         let slowZombie = new ZombieMark();
         slowZombie.div = game.createNewElement("zombieMark");
         game.drawNewElement(slowZombie);
         game.zombieArr.push(slowZombie);
       }
 
-      if (game.time % 80 === 0) {
+      if (game.time % 85 === 0) {
         let fastZombie = new ZombieKaren();
         fastZombie.div = game.createNewElement("zombieKaren");
         game.drawNewElement(fastZombie);
         game.zombieFasterArr.push(fastZombie);
       }
 
-      if (game.time % 60 === 0) {
+      if (game.time % 75 === 0) {
         let fastestZombie = new ZombieJay();
         fastestZombie.div = game.createNewElement("zombieJay");
         game.drawNewElement(fastestZombie);
@@ -66,7 +66,7 @@ class Level {
         weapon.deleteBulletRight(bullet);
       });
 
-      if (game.time % 150 === 0) {
+      if (game.time % 100 === 0) {
         let water = new Water();
         water.div = game.createNewElement("water");
         game.drawNewElement(water);
@@ -88,7 +88,7 @@ class Level {
         pickUp.detectPickUpCollection(medkit);
       });
 
-      if (game.time % 300 === 0) {
+      if (game.time % 200 === 0) {
         let parts = new Parts();
         parts.div = game.createNewElement("parts");
         game.drawNewElement(parts);

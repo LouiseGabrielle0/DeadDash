@@ -46,7 +46,7 @@ button {
   text-align: center;
 }
 
-#ready-player-one {
+.ready-player-one {
   font-size: 2em;
   background: black;
   text-align: center;
@@ -66,6 +66,15 @@ span {
   margin-left: 90%;
   font-size: 2.5em;
   background-color: grey;
+}
+
+.ammocount {
+  position: absolute;
+  margin-left: 90%;
+  top: 50%;
+  font-size: 2.5em;
+  background-color: grey;
+  z-index: 5;
 }
 
 .player {

@@ -44,7 +44,7 @@ class Game {
     this.drawNewElement(slowZombie);
     this.zombieArr.push(slowZombie);
     
-    console.log(player.level);
+    console.log("player life is" + player.level);
     if (player.level === 1){
       level.runLevel1()
     } else if (player.level ===2){

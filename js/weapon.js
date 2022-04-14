@@ -9,6 +9,7 @@ class Weapon {
     this.height = 0.3;
     this.bulletRightArr = [];
     this.bulletLeftArr = [];
+    this.ammoCount = 50;
   }
 
   moveRight() {
@@ -34,10 +35,12 @@ class Weapon {
       pew.play();
       this.bulletLeftArr.push(bullet);
       game.drawNewElement(bullet);
+      this.ammoCount-=1
     } else if (direction === "right") {
       this.bulletRightArr.push(bullet);
       game.drawNewElement(bullet);
       pew.play();
+      this.ammoCount-=1
     }
   }
 
@@ -107,5 +110,10 @@ class Weapon {
       //   "url('../images/Louise-trimmy-right.png')";
       this.shootWeapon(direction);
     }
+  }
+
+  displayAmmo(){
+    let ammo = this.ammoCount;
+  document.getElementById("ammo").textContent = ammo;
   }
 }
