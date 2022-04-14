@@ -1,7 +1,7 @@
 class Zombie {
   constructor() {
     this.div = null;
-    this.height = 10;
+    this.height = 11.5;
     this.width = 6.1;
     this.zombieRightArr = [];
     this.zombieLeftArr = [];

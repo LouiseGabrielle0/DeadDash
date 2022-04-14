@@ -71,6 +71,6 @@ class Medkit extends PickUp {
   constructor() {
     super();
     this.width = 4;
-    this.height = 4;
+    this.height = 4.5;
   }
 }

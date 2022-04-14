@@ -10,11 +10,10 @@ body{
   background-color: black;
   background-image: url(../images/zombie-background-road.png);
   background-repeat: no-repeat;
-  height: 50%;
   width: 50%;
   margin: 5rem;
-  margin-left: 20rem;
-  padding-bottom: 50rem;
+  margin-left: 15rem;
+  padding-bottom: 45rem;
   border: 5px solid black;
   z-index: 1;
 }
@@ -23,10 +22,9 @@ body{
   position: relative;
   background-image: url(../images/start-background.jpg);
   background-repeat: no-repeat;
-  height: 50%;
-  width: 40%;
+  width: 30%;
   margin: 5rem;
-  margin-left: 20rem;
+  margin-left: 20em;
   padding: 3rem;
   border: 5px solid black;
   z-index: 1;
@@ -35,7 +33,7 @@ body{
 #start-text{
   position: relative;
   padding-top: 2rem;
-  font-size: 2rem;
+  font-size: 1rem;
   text-align: center;
   text-shadow: 1px 1px #c5070794;
   padding-bottom: 2rem;
@@ -43,13 +41,13 @@ body{
 
 button {
   position: relative;
-  left: 20%;
-  margin-top: 5rem;
+  left: 30%;
+  margin-top: 3rem;
   text-align: center;
 }
 
 #ready-player-one {
-  font-size: 5em;
+  font-size: 2em;
   background: black;
   text-align: center;
   font-family: Creepster;
@@ -153,15 +151,9 @@ span {
     background-repeat: no-repeat;
     width: 20%;
     margin: 5rem;
-    margin-left: 20rem;
+    margin-left: 15rem;
     padding-bottom: 5rem;
     border: 5px solid black;
-}
-
-h2 {
-  font-size: 6em;
-  text-shadow: 1px 1px #FF0000;
-  text-align: center;
 }
 
 h2 {
@@ -171,7 +163,7 @@ h2 {
 }
 
 h3 {
-    font-size: 3em;
+    font-size: 2em;
     text-shadow: 1px 1px #FF0000;
     text-align: center;
     text-decoration: underline;
@@ -179,7 +171,7 @@ h3 {
 }
 
 h4 {
-    font-size: 2em;
+    font-size: 1.5em;
     text-shadow: 1px 1px #c5070794;
     text-align: center;
 }
