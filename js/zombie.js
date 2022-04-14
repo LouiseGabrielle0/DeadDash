@@ -77,7 +77,7 @@ class ZombieMark extends Zombie {
   }
 
   deleteZombieMark(zombie) {
-    if (zombie.positionX === 96) {
+    if (zombie.positionX === 95) {
       zombie.div.remove(zombie);
       game.zombieArr.splice(game.zombieArr.indexOf(zombie), 1);
     }
@@ -87,7 +87,7 @@ class ZombieMark extends Zombie {
 class ZombieKaren extends Zombie {
   constructor() {
     super();
-    this.positionX = 98;
+    this.positionX = 95;
     this.positionY = Math.floor(Math.random() * 60);
   }
 

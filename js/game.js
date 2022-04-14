@@ -154,9 +154,8 @@ class Game {
   }
 
   gameOver() {
-    alert("Game Over");
-    document.location.reload();
     clearInterval(this.timer);
-    return;
+    window.location.href = "../gameover.html"
+    displayScore();
   }
 }
