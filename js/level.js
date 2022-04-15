@@ -5,7 +5,6 @@ class Level {
   // This is something I will consider doing to condense the code, but for now just having individual methods per level
 
   runLevel1() {
-   
     game.timer = setInterval(() => {
       game.zombieArr.forEach((zombie) => {
         zombie.moveZombieRight();
@@ -100,11 +99,10 @@ class Level {
         pickUp.detectPickUpCollection(parts);
       });
 
-      if (player.score > 1500) {
-        game.pauseGame()
-        document.getElementById('levelup-container').style.display = 'block'
+      if (player.score > 150) {
+        game.pauseGame();
+        document.getElementById("levelup-container").style.display = "block";
         player.level += 1;
-        
       }
 
       game.time++;
@@ -112,7 +110,6 @@ class Level {
   }
 
   runLevel2() {
-  
     game.timer = setInterval(() => {
       game.zombieArr.forEach((zombie) => {
         zombie.moveZombieRight();
@@ -207,10 +204,10 @@ class Level {
         pickUp.detectPickUpCollection(parts);
       });
 
-      if (player.score > 3000) {
+      if (player.score > 300) {
+        game.pauseGame();
+        document.getElementById("levelup-container").style.display = "block";
         player.level += 1;
-        document.location.href = "../nextlevel.html";
-        console.log(player.score);
       }
 
       game.time++;
@@ -218,7 +215,6 @@ class Level {
   }
 
   runLevel3() {
-    playGameAudio()
     game.timer = setInterval(() => {
       game.zombieArr.forEach((zombie) => {
         zombie.moveZombieRight();
@@ -314,8 +310,9 @@ class Level {
       });
 
       if (player.score > 6000) {
+        game.pauseGame();
+        document.getElementById("levelup-container").style.display = "block";
         player.level += 1;
-        document.location.href = "../nextlevel.html";
       }
 
       game.time++;
@@ -418,9 +415,9 @@ class Level {
       });
 
       if (player.score > 10000) {
-        player.level += 1;
-        document.location.href = "../youwin.html";
+        game.pauseGame();
 
+        document.location.href = "../youwin.html";
       }
 
       game.time++;

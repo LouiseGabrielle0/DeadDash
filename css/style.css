@@ -1,9 +1,15 @@
+font-face {
+  font-family: Creepster, cursive;
+  src: url(../font/Creepster-Regular.ttf)
+}
+
 body{
     background-image: url(../images/body-background.jpg);
     background-repeat: no-repeat;
     font-family: 'Creepster', cursive;
     z-index: -5;
 }
+
 
 #container {
   position: relative;
