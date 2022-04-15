@@ -176,8 +176,7 @@ class Game {
 
   gameOver() {    
     clearInterval(this.timer);
-    // window.open("../gameover.html" , "_self")
-    document.location.href = "../gameover.html"
+    document.location.href = "./gameover.html"
     playGameOver()
     
   }
