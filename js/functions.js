@@ -75,9 +75,6 @@ function wait(ms){
   }
 }
 
-function makePew(){
-  pew.play()
-}
 
 
 // When I  try to add music using getElementById - it stops the rest of the script grabing elements 
