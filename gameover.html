@@ -14,21 +14,34 @@
     />
     <title>Game Over!!</title>
 </head>
+
+
 <body>
     <section id="start-screen">
         <div id="start-container">
        <h2>Dead-Dash</h2>
        <h2>You Died</h2>
        <h2>Nice Try</h2>
-       <h2></h2>
+       <br>
+       <br>
+       <h4>Art Credit - Button_Bell Artwork</h4>
+       <h4>Music Credit - CtrlFreq</h4>
+       <h4>Thank you!!</h4>
         </br>
     </br>
        <button id="ready-player-one-startagain" class="ready-player-one" onclick="window.location.href='./startgame.html'">Go again............</button>
        </div>
    </section>
 
-   <script src="./js/buttons.js"></script>
-   <script src="./js/restartgame.js"></script>
+   <audio id="gameOverAudio" controls autoplay>
+    <source src="./audio/game-over-bass.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+
+
+
+   <script src="./js/functions.js"></script>
+
     
 </body>
 </html>

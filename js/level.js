@@ -5,6 +5,7 @@ class Level {
   // This is something I will consider doing to condense the code, but for now just having individual methods per level
 
   runLevel1() {
+   
     game.timer = setInterval(() => {
       game.zombieArr.forEach((zombie) => {
         zombie.moveZombieRight();
@@ -111,6 +112,7 @@ class Level {
   }
 
   runLevel2() {
+  
     game.timer = setInterval(() => {
       game.zombieArr.forEach((zombie) => {
         zombie.moveZombieRight();
@@ -216,6 +218,7 @@ class Level {
   }
 
   runLevel3() {
+    playGameAudio()
     game.timer = setInterval(() => {
       game.zombieArr.forEach((zombie) => {
         zombie.moveZombieRight();

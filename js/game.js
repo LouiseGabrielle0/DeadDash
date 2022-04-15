@@ -163,6 +163,7 @@ class Game {
   // }
 
   pauseGame() {
+    pauseGameAudio()
     clearInterval(this.timer);
     this.timer = null;
     console.log("pause game");
@@ -172,10 +173,11 @@ class Game {
     document.location.reload();
   }
 
-  gameOver() {
+  gameOver() {    
     clearInterval(this.timer);
     document.location.href = "../gameover.html"
-    displayScore();
+    playGameOver()
+    
   }
 }
 

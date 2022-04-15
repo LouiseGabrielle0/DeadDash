@@ -79,3 +79,27 @@ function makePew(){
   pew.play()
 }
 
+
+// When I  try to add music using getElementById - it stops the rest of the script grabing elements 
+
+  let startGameAudio = document.getElementById("startGameAudio");
+  let gameOverAudio = document.getElementById("gameOverAudio");
+  let getReadyAudio = document.getElementById("getReadyAudio");
+  
+function playGetReadyAudio(){
+  getReadyAudio.play();
+}
+
+  function playGameOver(){
+    gameOverAudio.play()
+  }
+
+  function playGameAudio(){
+    getReadyAudio.pause()
+    startGameAudio.play()
+  }
+
+  function pauseGameAudio(){
+    startGameAudio.pause()
+    getReadyAudio.pause()
+  }
