@@ -32,14 +32,14 @@ class Weapon {
     const bullet = new Weapon(playerPositionX, playerPositionY);
     bullet.div = game.createNewElement("bullet");
     if (direction === "left") {
-      pew.play();
+      playShootAudio()
       this.bulletLeftArr.push(bullet);
       game.drawNewElement(bullet);
       this.ammoCount-=1
     } else if (direction === "right") {
       this.bulletRightArr.push(bullet);
       game.drawNewElement(bullet);
-      pew.play();
+      playShootAudio()
       this.ammoCount-=1
     }
   }

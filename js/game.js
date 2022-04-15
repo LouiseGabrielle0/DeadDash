@@ -43,6 +43,7 @@ class Game {
     slowZombie.div = this.createNewElement("zombieMark");
     this.drawNewElement(slowZombie);
     this.zombieArr.push(slowZombie);
+    playGetReadyAudio()
     
     console.log("player life is" + player.level);
     if (player.level === 1){

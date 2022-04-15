@@ -85,6 +85,7 @@ function makePew(){
   let startGameAudio = document.getElementById("startGameAudio");
   let gameOverAudio = document.getElementById("gameOverAudio");
   let getReadyAudio = document.getElementById("getReadyAudio");
+  let shootAudio = document.getElementById("shootAudio");
   
 function playGetReadyAudio(){
   getReadyAudio.play();
@@ -102,4 +103,8 @@ function playGetReadyAudio(){
   function pauseGameAudio(){
     startGameAudio.pause()
     getReadyAudio.pause()
+  }
+
+  function playShootAudio(){
+    shootAudio.play()
   }
