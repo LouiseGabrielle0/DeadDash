@@ -27,6 +27,16 @@ Shoot Right - D or d
 Pause - Spacebar
 Restart - R or r
 
+# Future Improvements
+
+- New Weapons
+- Zombies turning back once reaching the end of the screen
+- Limited Ammo + Ammo pickups
+- Molitov Cocktails pick ups
+- Score on Game Over screen
+- Different Music for each level
+- Obstacles on harder levels
+
 
 # Demo
 
