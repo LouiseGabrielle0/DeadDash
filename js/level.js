@@ -99,7 +99,7 @@ class Level {
         pickUp.detectPickUpCollection(parts);
       });
 
-      if (player.score > 150) {
+      if (player.score > 1500) {
         game.pauseGame();
         document.getElementById("levelup-container").style.display = "block";
         player.level += 1;
@@ -204,7 +204,7 @@ class Level {
         pickUp.detectPickUpCollection(parts);
       });
 
-      if (player.score > 300) {
+      if (player.score > 3000) {
         game.pauseGame();
         document.getElementById("levelup-container").style.display = "block";
         player.level += 1;
